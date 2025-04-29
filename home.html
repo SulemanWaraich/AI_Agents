@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartTech Support</title>
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/727/727245.png" type="image/png" />
+
+  <!-- Botpress Webchat Script -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js" async></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #f0f4f8, #d9e2ec);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #102a43;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    /* Optional: slight improvement to the floating bot widget */
+    .bp-widget {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+      border-radius: 16px !important;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Welcome to SmartTech Support</h1>
+  <p>Need help? Our chatbot is here to assist you — just click the icon in the bottom-right corner!</p>
+
+  <script>
+    window.botpress = window.botpress || {};
+    window.botpress.init({
+      botId: "c22dff63-d55f-4042-bc82-bed4fda7deff",
+      clientId: "ac164f19-a650-4c0c-a3f4-0bc462ab7a8e",
+      botName: "SmartTech Assistant",
+      stylesheet: "https://cdn.botpress.cloud/webchat/v2.4/themes/default.css",
+      showPoweredBy: false, // optional
+      disableAnimations: false,
+    });
+  </script>
+</body>
+</html>

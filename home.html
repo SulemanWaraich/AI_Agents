@@ -6,9 +6,6 @@
   <title>SmartTech Support</title>
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/727/727245.png" type="image/png" />
 
-  <!-- Botpress Webchat Script -->
-  <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js" async></script>
-
   <style>
     body {
       margin: 0;
@@ -33,7 +30,6 @@
       text-align: center;
     }
 
-    /* Optional: slight improvement to the floating bot widget */
     .bp-widget {
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
       border-radius: 16px !important;
@@ -46,16 +42,21 @@
   <h1>Welcome to SmartTech Support</h1>
   <p>Need help? Our chatbot is here to assist you — just click the icon in the bottom-right corner!</p>
 
+  <!-- Dynamically load Botpress script and init only when ready -->
   <script>
-    window.botpress = window.botpress || {};
-    window.botpress.init({
-      botId: "c22dff63-d55f-4042-bc82-bed4fda7deff",
-      clientId: "ac164f19-a650-4c0c-a3f4-0bc462ab7a8e",
-      botName: "SmartTech Assistant",
-      stylesheet: "https://cdn.botpress.cloud/webchat/v2.4/themes/default.css",
-      showPoweredBy: false, // optional
-      disableAnimations: false,
-    });
+    const script = document.createElement('script');
+    script.src = "https://cdn.botpress.cloud/webchat/v2.4/inject.js";
+    script.async = true;
+    script.onload = () => {
+      window.botpress.init({
+        botId: "c22dff63-d55f-4042-bc82-bed4fda7deff",
+        clientId: "ac164f19-a650-4c0c-a3f4-0bc462ab7a8e",
+        botName: "SmartTech Assistant",
+        stylesheet: "https://cdn.botpress.cloud/webchat/v2.4/themes/default.css",
+        showPoweredBy: false
+      });
+    };
+    document.head.appendChild(script);
   </script>
 </body>
 </html>
